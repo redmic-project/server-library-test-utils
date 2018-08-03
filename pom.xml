@@ -1,11 +1,12 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
-   		<artifactId>spring-boot-starter-parent</artifactId>
-    	<version>2.0.0.RELEASE</version>
-		<relativePath/>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.0.RELEASE</version>
+		<relativePath />
 	</parent>
 
 	<modelVersion>4.0.0</modelVersion>
@@ -15,7 +16,7 @@
 	<version>0.6.0</version>
 	<name>Test utils</name>
 	<description>Utilidades y servicios comunes para los tests</description>
-	
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -31,19 +32,22 @@
 		<jackson-datatype-jts.version>2.4</jackson-datatype-jts.version>
 		<ma.glasnost.orika.core>1.5.2</ma.glasnost.orika.core>
 		<powermock.version>1.7.3</powermock.version>
-		
+		<confluent.version>4.1.0</confluent.version>
+		<jersey-hk2.version>2.26</jersey-hk2.version>
+		<jersey-guava.version>2.26-b03</jersey-guava.version>
+
 		<!-- Environment variables -->
 		<env.MAVEN_REPO_URL>https://artifactory.redmic.net/artifactory</env.MAVEN_REPO_URL>
 	</properties>
 
 	<dependencies>
-	
+
 		<dependency>
 			<groupId>es.redmic.lib</groupId>
 			<artifactId>models</artifactId>
 			<version>${redmic.models.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>es.redmic.lib</groupId>
 			<artifactId>utils</artifactId>
@@ -94,7 +98,27 @@
 			<artifactId>powermock-module-junit4</artifactId>
 			<version>${powermock.version}</version>
 		</dependency>
-		
+
+		<!-- Schema Registry for testing -->
+
+		<dependency>
+			<groupId>io.confluent</groupId>
+			<artifactId>kafka-schema-registry</artifactId>
+			<version>${confluent.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.glassfish.jersey.inject</groupId>
+			<artifactId>jersey-hk2</artifactId>
+			<version>${jersey-hk2.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.glassfish.jersey.bundles.repackaged</groupId>
+			<artifactId>jersey-guava</artifactId>
+			<version>${jersey-guava.version}</version>
+		</dependency>
+
 		<!--test de documentación -->
 
 		<dependency>
@@ -115,4 +139,11 @@
 			<uniqueVersion>false</uniqueVersion>
 		</snapshotRepository>
 	</distributionManagement>
+	<repositories>
+		<repository>
+			<id>confluent</id>
+			<name>Confluent</name>
+			<url>https://packages.confluent.io/maven/</url>
+		</repository>
+	</repositories>
 </project>
