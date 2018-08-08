@@ -4,12 +4,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.AfterClass;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.test.annotation.DirtiesContext;
 
 import es.redmic.testutils.schemaregistry.RestApp;
 import io.confluent.kafka.schemaregistry.avro.AvroCompatibilityLevel;
 
-@DirtiesContext
 public abstract class KafkaBaseIntegrationTest {
 
 	protected static Logger logger = LogManager.getLogger();
