@@ -30,7 +30,7 @@
 		<!-- Others -->
 		<oauth.version>2.3.0.RELEASE</oauth.version>
 		<jackson-datatype-jts.version>2.4</jackson-datatype-jts.version>
-		<ma.glasnost.orika.core>1.5.2</ma.glasnost.orika.core>
+		<ma.glasnost.orika.core>1.4.6</ma.glasnost.orika.core>
 		<powermock.version>1.7.3</powermock.version>
 		<confluent.version>4.1.0</confluent.version>
 		<jersey-guava.version>2.26-b03</jersey-guava.version>
