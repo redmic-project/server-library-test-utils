@@ -104,6 +104,20 @@
 			<groupId>io.confluent</groupId>
 			<artifactId>kafka-schema-registry</artifactId>
 			<version>${confluent.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.glassfish</groupId>
+					<artifactId>javax.el</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>javax.el</groupId>
+    				<artifactId>javax.el-api</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.glassfish.web</groupId>
+					<artifactId>javax.el</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<dependency>
