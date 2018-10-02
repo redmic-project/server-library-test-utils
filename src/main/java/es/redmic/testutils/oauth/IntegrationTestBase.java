@@ -14,10 +14,11 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.context.WebApplicationContext;
 
+import es.redmic.testutils.kafka.KafkaBaseIntegrationTest;
 import es.redmic.utils.httpclient.HttpClient;
 
 @ActiveProfiles("test")
-public abstract class IntegrationTestBase {
+public abstract class IntegrationTestBase extends KafkaBaseIntegrationTest {
 
 	@Autowired
 	protected WebApplicationContext webApplicationContext;

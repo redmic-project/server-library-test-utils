@@ -81,6 +81,14 @@ public abstract class DocumentationViewBaseTest extends IntegrationTestBase {
 			put("regexp", "Regexp which apply to search");
 			put("postFilter", "Terms for create facets queries");
 			put("aggs", "Terms for create aggregations");
+			put("dateLimits", "Date interval query");
+			put("bbox", "Bounding box query");
+			put("precision", "Precision radio of a point");
+			put("qFlags", "Quality flag of a data");
+			put("vFlags", "Value type");
+			put("interval", "Query by time interval of a timeserie");
+			put("z", "Query by z field");
+			put("value", "Query by value");
 		}
 	};
 
@@ -127,6 +135,30 @@ public abstract class DocumentationViewBaseTest extends IntegrationTestBase {
 
 		return document("{class-name}/{method-name}", preprocessRequest(prettyPrint()),
 				preprocessResponse(prettyPrint()), requestFields(getMetadataQueryFieldsDescriptor(fields)));
+	}
+
+	protected RestDocumentationResultHandler getDataQueryFieldsDescriptor() {
+
+		ConstrainedFields fields = new ConstrainedFields(MetadataQueryDTO.class);
+
+		return document("{class-name}/{method-name}", preprocessRequest(prettyPrint()),
+				preprocessResponse(prettyPrint()), requestFields(getDataQueryFieldsDescriptor(fields)));
+	}
+
+	private List<FieldDescriptor> getDataQueryFieldsDescriptor(ConstrainedFields fields) {
+
+		List<FieldDescriptor> fieldDescriptor = getMetadataQueryFieldsDescriptor(fields);
+
+		fieldDescriptor.add(fields.withPath("dateLimits").description(parametersDescription.get("dateLimits")));
+		fieldDescriptor.add(fields.withPath("bbox").description(parametersDescription.get("bbox")));
+		fieldDescriptor.add(fields.withPath("precision").description(parametersDescription.get("precision")));
+		fieldDescriptor.add(fields.withPath("qFlags").description(parametersDescription.get("qFlags")));
+		fieldDescriptor.add(fields.withPath("vFlags").description(parametersDescription.get("vFlags")));
+		fieldDescriptor.add(fields.withPath("interval").description(parametersDescription.get("interval")));
+		fieldDescriptor.add(fields.withPath("z").description(parametersDescription.get("z")));
+		fieldDescriptor.add(fields.withPath("value").description(parametersDescription.get("value")));
+
+		return fieldDescriptor;
 	}
 
 	private List<FieldDescriptor> getMetadataQueryFieldsDescriptor(ConstrainedFields fields) {
