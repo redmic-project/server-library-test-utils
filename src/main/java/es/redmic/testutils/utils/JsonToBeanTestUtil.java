@@ -11,19 +11,20 @@ import java.nio.charset.StandardCharsets;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.bedatadriven.jackson.datatype.jts.JtsModule;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import es.redmic.jts4jackson.module.JTSModule;
+
 public final class JsonToBeanTestUtil {
 
 	private final static Logger LOGGER = LoggerFactory.getLogger(JsonToBeanTestUtil.class);
 
 	private static ObjectMapper jacksonMapper = new ObjectMapper()
-			.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false).registerModule(new JtsModule());
+			.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false).registerModule(new JTSModule());
 
 	private JsonToBeanTestUtil() {
 
