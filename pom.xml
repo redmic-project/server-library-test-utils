@@ -27,7 +27,7 @@
 		<!-- REDMIC -->
 		<redmic.models.version>0.8.0</redmic.models.version>
 		<redmic.utils.version>0.8.0</redmic.utils.version>
-		<redmic.jts4jackson.version>0.0.1</redmic.jts4jackson.version>
+		<redmic.jts4jackson.version>0.2.0</redmic.jts4jackson.version>
 		
 		<!-- Others -->
 		<oauth.version>2.3.0.RELEASE</oauth.version>
