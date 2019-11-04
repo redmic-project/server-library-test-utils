@@ -13,7 +13,7 @@
 	<groupId>es.redmic.lib</groupId>
 	<artifactId>test-utils</artifactId>
 	<packaging>jar</packaging>
-	<version>0.9.0</version>
+	<version>0.10.0</version>
 	<name>Test utils</name>
 	<description>Utilidades y servicios comunes para los tests</description>
 
@@ -25,9 +25,9 @@
 		<java.version>1.8</java.version>
 
 		<!-- REDMIC -->
-		<redmic.models.version>0.8.0</redmic.models.version>
-		<redmic.utils.version>0.8.0</redmic.utils.version>
-		<redmic.jts4jackson.version>0.0.1</redmic.jts4jackson.version>
+		<redmic.models.version>0.11.0</redmic.models.version>
+		<redmic.utils.version>0.10.0</redmic.utils.version>
+		<redmic.jts4jackson.version>0.2.0</redmic.jts4jackson.version>
 		
 		<!-- Others -->
 		<oauth.version>2.3.0.RELEASE</oauth.version>
@@ -112,7 +112,23 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-
+		
+		<dependency>
+			<groupId>io.confluent</groupId>
+			<artifactId>kafka-avro-serializer</artifactId>
+			<version>${confluent.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-log4j12</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>log4j</groupId>
+					<artifactId>log4j</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		
 		<dependency>
 			<groupId>org.glassfish.jersey.inject</groupId>
 			<artifactId>jersey-hk2</artifactId>
