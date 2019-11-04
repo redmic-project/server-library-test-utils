@@ -13,7 +13,7 @@
 	<groupId>es.redmic.lib</groupId>
 	<artifactId>test-utils</artifactId>
 	<packaging>jar</packaging>
-	<version>0.9.0-feature-atlasMicroservice</version>
+	<version>0.10.0</version>
 	<name>Test utils</name>
 	<description>Utilidades y servicios comunes para los tests</description>
 
