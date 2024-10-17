@@ -9,9 +9,9 @@ package es.redmic.testutils.oauth;
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -58,8 +58,8 @@ public abstract class IntegrationTestBase extends KafkaBaseIntegrationTest {
 	@Value("${test.user.ADMINISTRATOR}")
 	private String ADMINISTRATOR_USER;
 
-	@Value("${test.user.OAG}")
-	private String OAG_USER;
+	@Value("${test.user.MANAGER}")
+	private String MANAGER_USER;
 
 	@Value("${test.user.COLLABORATOR}")
 	private String COLLABORATOR_USER;
@@ -82,9 +82,9 @@ public abstract class IntegrationTestBase extends KafkaBaseIntegrationTest {
 		return obtainAccessToken(ADMINISTRATOR_USER, PASSWORD);
 	}
 
-	protected String getTokenOAGUser() {
+	protected String getTokenManagerUser() {
 
-		return obtainAccessToken(OAG_USER, PASSWORD);
+		return obtainAccessToken(MANAGER_USER, PASSWORD);
 	}
 
 	protected String getTokenCollaboratorUser() {
